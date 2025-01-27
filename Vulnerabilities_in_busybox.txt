@@ -1,0 +1,41 @@
+1. Hardcoded Credentials/Network Configurations:
+  Observed:
+  IPs: 192.168.1.108, 192.168.1.1, etc.
+  Network-related fields: HOSTIP, SUBMASK, GATEWAYIP, BRIDGENAME.
+  Risks:
+  Hardcoded IPs and network details might indicate fixed defaults. If attackers know these, they could exploit the system by 
+  targeting these default configurations.
+
+2. Insecure Function Usage:
+ Functions Identified:
+  strcpy, sprintf, system.
+ Risks:
+  strcpy and sprintf are vulnerable to buffer overflow attacks.
+  system can lead to command injection if input is not sanitized.
+
+3. Log Error Messages:
+ Observed:
+  Error logs with format strings (ERR (%s|%s|%d): ...).
+ Risks:
+  Detailed logs might expose sensitive information (e.g., file paths, commands) if accessible to unauthorized users.
+
+4. Access to System-Level Functions:
+ Observed:
+  Functions like mmap, ioctl, vfork, execvp.
+  Paths such as /mnt/mtd/Config/network, /etc/securetty.
+ Risks:
+  If improperly implemented, these could lead to privilege escalation or system compromise.
+
+5. Potential Information Disclosure:
+ Observed:
+  Hardcoded paths (/mnt/mtd/Config/network, /proc/net/dev).
+  Detailed error messages related to networking (e.g., NetWorkGetMACAddress, NetSetHostIPEx).
+ Risks:
+  Paths and error logs may help attackers map the system.
+
+6. Default or Fixed Security Measures:
+ Observed:
+  Fixed MTU: MTU = 1500.
+  DHCP configuration in /mnt/mtd/Config/ddns-server.
+ Risks:
+  These default settings might be exploitable if not updated during deployment.
