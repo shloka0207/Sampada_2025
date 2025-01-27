@@ -39,3 +39,13 @@
   DHCP configuration in /mnt/mtd/Config/ddns-server.
  Risks:
   These default settings might be exploitable if not updated during deployment.
+
+7. Cryptographic Functions:
+   - The presence of libcrypt.so.0 and encrypt suggests cryptographic operations. Weak or outdated cryptographic methods could pose security risks.
+
+3. Stripped Binary:
+   - The lack of debugging symbols and limited disassembly indicates the binary is stripped, making it harder to analyze but potentially hiding malicious behavior.
+
+9. Writable and Executable Sections*:
+   - The .data and .bss sections are writable, and the .text section is executable. This could allow exploitation via techniques like buffer overflows or return-oriented programming (ROP).
+
