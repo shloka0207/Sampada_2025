@@ -46,6 +46,6 @@
 8. Stripped Binary:
    - The lack of debugging symbols and limited disassembly indicates the binary is stripped, making it harder to analyze but potentially hiding malicious behavior.
 
-9. Writable and Executable Sections*:
+9. Writable and Executable Sections:
    - The .data and .bss sections are writable, and the .text section is executable. This could allow exploitation via techniques like buffer overflows or return-oriented programming (ROP).
 
