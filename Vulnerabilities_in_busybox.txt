@@ -43,7 +43,7 @@
 7. Cryptographic Functions:
    - The presence of libcrypt.so.0 and encrypt suggests cryptographic operations. Weak or outdated cryptographic methods could pose security risks.
 
-3. Stripped Binary:
+8. Stripped Binary:
    - The lack of debugging symbols and limited disassembly indicates the binary is stripped, making it harder to analyze but potentially hiding malicious behavior.
 
 9. Writable and Executable Sections*:
